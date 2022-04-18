@@ -9,7 +9,7 @@ namespace ConsoleAppAPI
             endpoint = endpointRoute;
             url = endPointURI;
         }
-        public string GetAPIEndpoint()
+        public string GetAPIEndpointJson()
         {
             using(var client = new HttpClient())
             {

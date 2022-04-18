@@ -12,12 +12,19 @@ namespace ConsoleAppAPI
             string url = "https://jsonplaceholder.typicode.com/";
             var getPosts = new GetApiResponse("posts", url);
             var getTodos = new GetApiResponse("todoss", url);
-            //Console.WriteLine(getPosts.GetAPIEndpoint());
+            var resultJSON = getPosts.GetAPIEndpointJson();
+            Console.WriteLine(resultJSON);
+            Posts myPosts = JsonConvert.DeserializeObject<Posts>(resultJSON);
+
+            foreach (var post in myPosts)
+            {
+                Console.WriteLine($"{post.id}");
+            }
+        
             //Console.WriteLine(getTodos.GetAPIEndpoint());
 
             var postMe = new PostApiContent();
             var result = postMe.PostApiContentPosts(url,"Test Post Here", "Hello to my world", 44);
-            Console.WriteLine(result);
         }
     }
 }
