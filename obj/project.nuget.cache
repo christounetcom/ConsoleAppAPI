@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "oU3C0laY+/mH1gRNr8Mda7+7hord5r0r387baj9ig4Eu5L4jSBYMcc5X1oKsIPP5aBW3+RPyjniBQrwtDWvlkA==",
+  "dgSpecHash": "zIcYeRM31l/CuiPA9j3qjEAzASIkKf3oHg9Q275zIq7JLVDJTOgFYgZZeNKIpLP8mWG5Ubd/iqW+UQGGg0LaJA==",
   "success": true,
   "projectFilePath": "/Users/nickchristou/Documents/ConsoleAppAPI/ConsoleAppAPI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/nickchristou/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/nickchristou/.nuget/packages/restsharp/107.3.0/restsharp.107.3.0.nupkg.sha512"
+  ],
   "logs": []
 }
