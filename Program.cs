@@ -9,26 +9,15 @@ namespace ConsoleAppAPI
     {
         static void Main(string[] args)
         {
-            using(var client = new HttpClient())
-            {
-                var endpoint = new Uri("https://jsonplaceholder.typicode.com/posts");
-                var newPost = new Posts()
-                {
-                    Title = "Test Post",
-                    Body = "Hello World",
-                    UserId = 44
-                };
-                var newPostJson = JsonConvert.SerializeObject(newPost);
-                Console.WriteLine(newPostJson);
-                var payload = new StringContent(newPostJson, Encoding.UTF8, "application/json");
-                var result = client.PostAsync(endpoint,payload).Result.Content.ReadAsStringAsync().Result;
-                Console.WriteLine(result);
+            string url = "https://jsonplaceholder.typicode.com/";
+            var getPosts = new GetApiResponse("posts", url);
+            var getTodos = new GetApiResponse("todoss", url);
+            //Console.WriteLine(getPosts.GetAPIEndpoint());
+            //Console.WriteLine(getTodos.GetAPIEndpoint());
 
-                // GET Items in JSON
-                //var result = client.GetAsync(endpoint).Result;
-                //var json = result.Content.ReadAsStringAsync().Result;
-                //Console.WriteLine(json);
-            }
+            var postMe = new PostApiContent();
+            var result = postMe.PostApiContentPosts(url,"Test Post Here", "Hello to my world", 44);
+            Console.WriteLine(result);
         }
     }
 }
